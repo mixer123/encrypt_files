@@ -5,10 +5,10 @@
     <title>Title</title>
 </head>
 <body>
+Pobranie pliku powoduje usunięcie go z serwera.<br>
 {% for l in listdir%}
-   <a href=" /download/{{ l }} ">{{l}} </a><br>
+<a href=" /download/{{ l }} "><button>Pobierz plik {{ l }}</button> </a><br>
 {% endfor %}
-
 
 </body>
 </html>
