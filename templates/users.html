@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+ <form action="{% url 'upload-page' %}">
+     {% csrf_token %}
+         <div >
+
+             <select name="nameuser" >
+             {% for u in users %}
+                <option value="{{ u.username }}">{{ u }}</option>
+             {% endfor %}
+
+             </select>
+<!--            <div id="input">-->
+<!--                <input id="search" type="text" placeholder="Wprowadź usera" name="username">-->
+<!--            </div>-->
+            <input id="send" type="submit" value="Wyślij">
+
+         </div>
+    </form>
+
+</body>
+</html>

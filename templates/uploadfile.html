@@ -5,15 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <input type="file" name="myfile">
-    <button type="submit">Upload</button>
-  </form>
+<form  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p>
+            <p>{{ form.file.label_tag }} {{ form.file.help_text }}</p>
+            <p>
+                {{ form.file.errors }}
+                {{ form.file }}
+            </p>
+            <p><input type="submit" value="Wyślij" /></p>
+        </form>
 
-  {% if uploaded_file_url %}
-    <p>File uploaded </p>
-  {% endif %}
+<!--  {% if uploaded_file_url %}-->
+<!--    <p>File uploaded </p>-->
+<!--  {% endif %}-->
 
 
 </body>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static%}
+{%block title %}
+
+{% endblock %}
+
+
+{%block content %}
+
+<h2>Zaloguj</h2>
+<form method="post">
+  {% csrf_token %}
+  <table>
+        {{ form.as_table }}
+  </table>
+  <button type="submit">Wyślij</button>
+</form>
+<a href="/accounts/password_reset/">Zapomniałeś hasło ?</a>
+
+
+{% endblock %}

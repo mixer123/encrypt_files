@@ -1,16 +1,11 @@
-from django.contrib import admin
 from django.urls import path, include
-from django.conf import settings
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.contrib.staticfiles.urls import static
-
 from . import views
-from .forms import UploadForm
-
 urlpatterns = [
-
-    path('upload/', views.uploadfile, name="uploadfile-page"),
-    path('listdir/', views.show_files, name="listdir-page"),
-    path('download/<str:file_name>/', views.download_file, name="download-page"),
-
+    path("", views.start, name="start-page"),
+    path('upload/', views.upload, name="upload-page"),
+    path('uploadfile/', views.uploadfile, name="uploadfile-page"),
+    path('listusers/', views.listusers, name="listusers-page"),
+    path('success/', views.success, name="success-page"),
+    path('download/<str:file_name>/', views.download_file),
+    path('download/', views.download_list, name='download-page'),
     ]

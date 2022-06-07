@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
-<body>
+</head><body>
 Pobranie pliku powoduje usunięcie go z serwera.<br>
 {% for l in listdir%}
-<a href=" /download/{{ l }} "><button>Pobierz plik {{ l }}</button> </a><br>
+<form action="/download/{{ l }}/" method="post">
+    {% csrf_token %}
+    <select name="cars" id="cars">
+        <option value="volvo"><a href=" /download/{{ l }}/ "><button>Pobierz plik {{ l }}</button> </a></option>
+    </select>
+<button type="submit" name="submit" value="submit">Do It </button>
+</form>
 {% endfor %}
-
 </body>
 </html>
+
